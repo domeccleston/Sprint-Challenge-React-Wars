@@ -26,13 +26,35 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is a Javascript library that is used to build user interfaces: it handles the "view" part of the MVC pattern. Prior to React, building interactive UIs usually required manually updating the DOM, which if using vanilla JS required time consuming syntax and was slow. React solved these problems: it introduced new JSX syntax that mixed HTML and JS, and introduced a 'virtual DOM' that sped up rendering.
+
 - [ ] What does it mean to _think_ in react?
+
+The ReactJS docs state that thinking in React means breaking your app down into a list of sub-components, and
+first implementing them statically. The developer should then work out which of these sub-components should
+hold state, and implementing a data flow that holds their state in the highest possible relevant component.
+This state is passed down to its children via props, who in turn can update state via callback functions.
+
+So in other words, thinking in React means thinking about web applications in a modular way that enables a 
+one-way flow of data down the component tree.
 
 - [ ] Describe state.
 
+State is the information that a component can "remember": for example, a checkbox's state might be if it is 
+checked or not, and a button's state might be the number of times it has been clicked. 
+
 - [ ] Describe props.
 
+Props are the inputs (arguments) to React functional components. The term props is arbitrary but conventional.
+We can add props as JSX attributes and use them to pass data down through the component hierarchy.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+Side effects are anything that functions do that modifies a variable other than that function's return value.
+In the context of React, this means a functional component that affects some other aspect of the UI. In React
+we can sync side effects to specific state or prop changes through use of the useEffect hook, passing in 
+an array containing the variable we want our effect to sync to.
+
 
 ## Project Set Up
 
